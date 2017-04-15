@@ -4,7 +4,7 @@ class ViewManager {
 
 	connectEventHandlers() {
 		document.getElementById('form-numbers')
-			.addEventListener('submit', this.onSubmit);
+			.addEventListener('submit', this.onSubmit.bind(this));
 	}
 
 	onSubmit(event) {
@@ -19,7 +19,11 @@ class ViewManager {
 
 		const product = mult(num1, num2);
 
-		alert(product);
+		this.renderProduct(product);
+	}
+
+	renderProduct(product) {
+		document.querySelector('.product').textContent = product;
 	}
 }
 
