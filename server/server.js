@@ -8,25 +8,24 @@ const server = http.createServer(function(request, response) {
 	let filePath = `./client/${urlPath}`;
 
 	fs.stat(filePath, (err, fileInfo) => {
-		if (!err && fileInfo.isDirectory()) {
-			filePath += '/index.html';		
-		}
+		if (err) {
+			response.statusCode = 404;
+			response.end(`Resource not found: '${urlPath}'`);		
+		} 	else {
 	
-		fs.exists(filePath, doesExist => {
-			if (!doesExist) {
-				response.statusCode = 404;
-				response.end(`Resource not found: '${urlPath}'`)
-			} 	else {
-				fs.readFile(filePath, (err, data) => {
-					if (err) {
-						response.statusCode = 500;
-						response.end(`Server error: '${err}'`);
-					} else {
-						response.end(data.toString('utf-8'));
-					}
-				});
-			}
-		});
+			if (fileInfo.isDirectory()) {
+				filePath += '/index.html';
+			} 
+
+			fs.readFile(filePath, (err, data) => {
+				if (err) {
+					response.statusCode = 500;
+					response.end(`Server error: '${err}'`);
+				}	else {
+					response.end(data.toString('utf-8'));
+				}
+			});
+		}
 	});
 
 });
