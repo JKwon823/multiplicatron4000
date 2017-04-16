@@ -9,17 +9,17 @@
 }
 
 #form-numbers hr, input[type=text] {
-	width: 80px;
+	width: 90px;
 	font-size: 36px;
 	text-align: center;
 }
 
-#form-numbers input[type=submit] {
-	font-size: 24px;
+#form-number button {
+	font-size: 36px;
 	margin-top: 50px;
 }
 
-.sum {
+.product {
 	font-size: 48px;
 	font-weight: bold;
 }

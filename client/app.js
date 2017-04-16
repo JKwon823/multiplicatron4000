@@ -11,13 +11,17 @@ class ViewManager {
 
 		event.preventDefault();
 
-		let num1 = document.getElementById('input-num1').value;
-		let num2 = document.getElementById('input-num2').value;
+		let numbers = [];
+		var inputNum = 'input-num1';
 
-		num1 = parseInt(num1, 10);
-		num2 = parseInt(num2, 10);
+		for (let i = 1; document.getElementById(inputNum) !== null; i++) {
+			let num = document.getElementById(inputNum).value;
+			num = parseInt(num, 10);
+			numbers.push(num);
+			inputNum = 'input-num' + (i + 1);
+		}
 
-		const product = mult(num1, num2);
+		var product = mult(numbers);
 
 		this.renderProduct(product);
 	}

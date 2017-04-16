@@ -21,16 +21,20 @@ class TestSuite {
 	}
 
 	testMultPositiveNumbers(){
-		return this.assertEquals(mult(3, 2), 6);
+		return this.assertEquals(mult([3, 2]), 6);
 	}
 
 	testMultPositiveAndNegativeNumbers(){
-		return this.assertEquals(mult(-3, 4), -12);
+		return this.assertEquals(mult([-3, 4]), -12);
 	}
 
 	testMultNegativeNumbers(){
-		return this.assertEquals(mult(-3, -1), 3);
-	}	
+		return this.assertEquals(mult([-3, -1]), 3);
+	}
+
+	testMultEmptyNumbers(){
+		return this.assertEquals(isNaN(mult([])), true);
+	}
 }
 
 const testSuite = new TestSuite();
