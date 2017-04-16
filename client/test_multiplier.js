@@ -11,7 +11,6 @@ class TestSuite {
 		//find tests
 		//execute them
 		Object.getOwnPropertyNames(Object.getPrototypeOf(this))
-			.filter(prop => this[prop] instanceof Function)
 			.filter(prop => prop.indexOf('test') !== -1)
 			.forEach(testName => this.runTest(testName));
 	}
@@ -32,8 +31,12 @@ class TestSuite {
 		return this.assertEquals(mult([-3, -1]), 3);
 	}
 
-	testMultEmptyNumbers(){
+	testEmptyNumbers(){
 		return this.assertEquals(isNaN(mult([])), true);
+	}
+
+	testInvalidNumbers(){
+		return this.assertEquals(isNaN(multi(['a', 'b']), true);
 	}
 }
 

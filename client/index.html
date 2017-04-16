@@ -4,11 +4,11 @@
 <head>
 	<link href="styles.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript">
-	var i = 2;
+	let i = 2;
 	function addFactor(){
 		i++;
-		var inputNum = 'input-num' + i;
-		var input = document.createElement('div');
+		const inputNum = 'input-num' + i;
+		const input = document.createElement('div');
 		input.innerHTML = '<input id="'+ inputNum + '" type="text" autocomplete="off"/>';
 		document.getElementById('form-numbers').insertBefore(input, document.getElementById('line'));
 	}
@@ -27,7 +27,7 @@
 		<div class="product">?</div>
 		<button>Calculate!</button>
 		<div>
-			<button type="button" onclick="addFactor()">New Factor</button>
+			<button type="button" onclick="addFactor()">New factor</button>
 		</div>
 	</form>
 	<script src="bundle.js"></script>
