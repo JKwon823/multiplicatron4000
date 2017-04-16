@@ -32,6 +32,6 @@ const server = http.createServer(function(request, response) {
 });
 
 const PORT = process.env.PORT || 4000;
-server.listen(4000, function() {
-	console.log(`Server Listening on port ${PORT}...`)
-})
+server.listen(PORT, function() {
+	console.log(`Server Listening on port ${PORT}...`);
+});
