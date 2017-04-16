@@ -5,7 +5,7 @@ const url = require('url');
 const server = http.createServer(function(request, response) {
 	
 	const urlPath = url.parse(request.url).pathname;
-	var filePath = `./client/${urlPath}`;
+	let filePath = `./client/${urlPath}`;
 
 	fs.stat(filePath, (err, fileInfo) => {
 		if (!err && fileInfo.isDirectory()) {
@@ -31,7 +31,7 @@ const server = http.createServer(function(request, response) {
 
 });
 
-
+const PORT = process.env.PORT || 4000;
 server.listen(4000, function() {
-	console.log(`Server Listening...`)
+	console.log(`Server Listening on port ${PORT}...`)
 })
