@@ -1,14 +1,13 @@
 const mult = function(numbers) {
 	let answer = NaN;
-		if(numbers.length > 0) {
+	numbers = numbers.filter(input => typeof input === 'number');
+		if(numbers.length > 1) {
 			numbers.forEach((number, index) => {
-				if (index === 0 && !isNaN(numbers[index + 1])) {
+				if(index === 0) {
 					answer = number;
-				}	else {
-						if(!isNaN(number)) {
+				} 	else {
 						answer *= number;
 					}
-				}
 			});
 		}
 	return answer;
