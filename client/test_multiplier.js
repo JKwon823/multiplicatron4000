@@ -36,7 +36,7 @@ class TestSuite {
 	}
 
 	testInvalidNumbers(){
-		return this.assertEquals(isNaN(multi(['a', 'b']), true);
+		return this.assertEquals(isNaN(mult(['a', 'b'])), true);
 	}
 }
 
