@@ -4,8 +4,10 @@ const mult = function(numbers) {
 			numbers.forEach((number, index) => {
 				if (index === 0) {
 					answer = number;
-				} else {
-					answer *= number;
+				}	else {
+						if(!isNaN(number)) {
+						answer *= number;
+					}
 				}
 			});
 		}
