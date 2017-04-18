@@ -1,10 +1,22 @@
 const mult = require('./multiplier.js');
 
+let i = 2;
 class ViewManager {
 
 	connectEventHandlers() {
 		document.getElementById('form-numbers')
 			.addEventListener('submit', this.onSubmit.bind(this));
+		document.getElementById('new-factor')
+			.addEventListener('click', this.addFactor.bind(this));
+	}
+
+	addFactor(event){
+		
+		i++;
+		const inputNum = 'input-num' + i;
+		const input = document.createElement('div');
+		input.innerHTML = '<input id="'+ inputNum + '" type="text" autocomplete="off"/>';
+		document.getElementById('form-numbers').insertBefore(input, document.getElementById('line'));
 	}
 
 	onSubmit(event) {

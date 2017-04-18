@@ -3,16 +3,6 @@
 
 <head>
 	<link href="styles.css" rel="stylesheet" type="text/css">
-	<script type="text/javascript">
-	let i = 2;
-	function addFactor(){
-		i++;
-		const inputNum = 'input-num' + i;
-		const input = document.createElement('div');
-		input.innerHTML = '<input id="'+ inputNum + '" type="text" autocomplete="off"/>';
-		document.getElementById('form-numbers').insertBefore(input, document.getElementById('line'));
-	}
-	</script>
 </head>
 
 <body>
@@ -26,8 +16,8 @@
 		<hr id="line"></hr>
 		<div class="product">?</div>
 		<button>Calculate!</button>
-		<div>
-			<button type="button" onclick="addFactor()">New factor</button>
+		<div id="new-factor">
+			<button type="button">New factor</button>
 		</div>
 	</form>
 	<script src="bundle.js"></script>
