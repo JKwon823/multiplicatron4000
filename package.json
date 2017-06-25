@@ -5,10 +5,15 @@
   "main": "server/server.js",
   "scripts": {
     "postinstall": "browserify client/app.js -o client/bundle.js",
-    "start": "node server/server.js"
+    "start": "node server/server.js",
+    "test": "mocha"
   },
   "license": "MIT",
   "dependencies": {
     "browserify": "^14.3.0"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
   }
 }
