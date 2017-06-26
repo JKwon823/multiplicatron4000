@@ -1,7 +1,7 @@
 # Project Name
 
 > Pithy project description
-![Alt text] https://travis-ci.org/ResponsibleRhinos/ResponsibleRhinos.svg?branch=master
+![Alt text]https://travis-ci.org/ResponsibleRhinos/ResponsibleRhinos.svg?branch=master
 
 ## Team
 
